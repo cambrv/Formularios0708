@@ -1,0 +1,31 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="container">
+    <div>
+      <label for="cedula">Cédula:</label>
+      <input type="text" id="cedula" formControlName="cedula" class="rounded-input">
+    </div>
+  
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" formControlName="nombre" class="rounded-input">
+    </div>
+  
+    <div>
+      <label for="fecha">Fecha N:</label>
+      <input type="date" id="fecha" formControlName="fecha" class="rounded-input">
+    </div>
+  
+    <div>
+      <label for="fecha">Ciudad:</label>
+
+      <select id="ciudad" formControlName="ciudad" name="ciudad" required>
+        <option value="" disabled selected>Selecciona una ciudad</option>
+        <option value="Bogotá">Machala</option>
+        <option value="Medellín">Quito</option>
+        <option value="Cali">Loja</option>
+  </select>
+    </div>
+    <p> {{mensaje}}</p>
+    <button type="submit" [disabled]="!formulario.valid" class="rounded-button">Enviar</button>
+    <button type="button" (click)="limpiarFormulario()" class="cancel-button">Cancelar</button>
+  </form>
+  
